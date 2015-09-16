@@ -1,0 +1,10 @@
+<div ng-if="section.yourChoice">
+	<h4 ng-click="collapse = !collapse" class="fake-link readmore_button block-link open"><i ng-class="{'fa-rotate-90':collapse}" class="fa fa-play"></i> Your Choice</h4>
+	 <div ng-if="collapse" class="show-first open radio_button">
+	 	<div ng-repeat="choice in section.yourChoice">
+	 		<label>
+	 			<input type="radio" name="{{section.name}}" ng-init="initializeCart(choice,section,chapters)" ng-click="addProduct(choice,section,chapters)" value="{{choice.value}}"><span type="button"></span><span>{{choice.name}} - {{choice.value|currency}}</span>
+	 		</label>
+	 	</div>
+	 </div>
+</div>

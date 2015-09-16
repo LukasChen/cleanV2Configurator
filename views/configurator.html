@@ -1,0 +1,21 @@
+<div class="col-sm-9" ng-controller="configurator">
+    <h1>ViCase</h1>
+    <div ng-repeat="chapters in data" class="panel panel-default">
+        <div class="panel-heading con-fig-header" ng-click="collapse = !collapse">
+        <h2><i ng-class="{'fa-rotate-90':collapse}" class="fa fa-play"></i> {{chapters.name}}</h2>
+        </div>
+        <div ng-if="collapse" class="panel-body collapseable">
+            <div class="Sections" ng-repeat="section in chapters.data">
+                <div class="col-sm-2">
+                    <img ng-if="cart[chapters.name][section.name].lastclickedImg" ng-src="{{cart[chapters.name][section.name].lastclickedImg}}">
+                </div>
+                <div class="col-sm-10">
+                    <h3 ng-click="collapse = !collapse" class="sub-sectionToggle"><i ng-class="{'fa-rotate-90':collapse}" class="fa fa-play"></i>{{section.name}}</h3>
+                    <div ng-if="collapse">
+                        <sectiondetails></sectiondetails>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Configurator</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/screen.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="controller/Configurator.js"></script>
+    <script type="text/javascript" src="controller/Sidebar.js"></script>
+    <script>
+        angular.module('configApp',['configurator','sidebar']);
+    </script>
+</head>
+
+<body ng-app="configApp">
+    <!--Begin nvbar-->
+    <div id="navbar" class="navbar navbar-fixed-top">
+       <!--button href="#" class="btn btn-default toggle-panel"><i class="fa fa-bars"></i></button>-->
+       <div class="container">
+          <div class="navbar-header">
+             <div class="logo"><a href="/"><span style="font-family: Roboto-Bold" class="navbar-brand">Home</span></a></div>
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+             <span class="sr-only">Toggle Navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             </button>
+          </div>
+          <div class="navbar-collapse collapse">
+             <ul class="nav navbar-nav">
+                <li><a href="http://v-squared.github.io/v2-Configurator" class="active">Configurator</a></li>
+             </ul>
+          </div>
+          </div>
+    </div>
+    <!--End Navbar-->
+
+    <!--Begin Jumbotron-->
+    <div class="jumbotron jumbotron-primary masthead">
+       <div class="container">
+         <div class="row">
+            <div class="col-sm-2">
+                <img src="images/expansion/config/v2configurator-logo-292x256.png">
+            </div>
+            <div class="col-sm-8">
+                <h1>V²Configurator</h1>
+                <p>Powerful Configurator & Price Calculator with easy Config</p>
+                <p>
+                   <a href="https://github.com/V-Squared/v2-Configurator/wiki" class="btn btn-primary btn-border btn-lg">GitHub Repo</a>
+                </p>        
+            </div>
+         </div>
+       </div>
+    </div>
+    <!--End Jumbotron-->
+
+    <!--[if lte IE 8]>
+        <script>alert(IE 8)</script>
+    <![endif]-->
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <ng-include src="'views/configurator.html'"></ng-include>
+                <ng-include src="'views/sidebar.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
